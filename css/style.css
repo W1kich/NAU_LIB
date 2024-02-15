@@ -914,7 +914,7 @@ button.accordion-btn {
 	flex-direction: row;
 	justify-content: space-between;
 	border-top: 1px solid #637381;
-	padding: 0 80px 48px 80px;
+	padding: 24px 80px 48px 80px;
 }
 .footer-bottom-left {
 	color: var(--Neutrual, #637381);
@@ -926,6 +926,11 @@ button.accordion-btn {
 	line-height: normal;
 }
 .footer-bottom-right {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items:center;
+	gap: 8px;
 	color: var(--Neutrual, #637381);
 	text-align: center;
 	font-family: Nunito;
@@ -935,6 +940,7 @@ button.accordion-btn {
 	line-height: normal;
 }
 .envy {
+	margin: -5px;
 	color: var(--Primary-1, #3E83D7);
 	font-family: Nunito;
 	font-size: 18px;
