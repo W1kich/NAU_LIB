@@ -1,5 +1,8 @@
 @import url("reset.css");
 /* Шаблони стандартні елемети і тп. */
+body{
+	overflow-x: hidden;
+}
 [class*="__container"]{
 	margin: 0 auto;
 	padding: 64px 80px;
@@ -1009,10 +1012,6 @@ button.accordion-btn {
 		padding: 64px 40px;
 		max-width: 1800px;
 	}
-
-	/* .main__container {
-		height: 549px;
-	} */
 
 	.main-content{
 		width: calc(100vw - 80px);
