@@ -1,4 +1,4 @@
-//slider
+//slider try
 
 const sliderItem = document.querySelectorAll('.slide'),
 			sliderLine = document.querySelector('.slider-line'),
