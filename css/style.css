@@ -1,7 +1,7 @@
 @import url("reset.css");
 /* Шаблони стандартні елемети і тп. */
 body{
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 [class*="__container"]{
 	margin: 0 auto;
@@ -415,6 +415,8 @@ header{
 
 /* news */
 
+/* news */
+
 .news__container {
 	display: flex;
 	flex-direction: column;
@@ -429,10 +431,8 @@ header{
 	gap: 64px;
 }
 .news-cards {
+	gap: 64px;
 	display: flex;
-	flex-direction: row;
-	display: flex;
-	/* width: 1760px; */
 	justify-content: space-between;
 	align-items: center;
 }
@@ -591,6 +591,22 @@ background: rgb(76, 122, 117);
 
 .news-more-btn:active{
 	background: #769ED7;
+}
+
+.slick-slide {
+	transform: scale(0.9);
+	.news-card{
+		max-width: 100%;
+	}
+	
+}
+
+.slick-center{
+	transform: scale(1);
+}
+
+.slick-initialized .slick-slide{
+	display: flex;
 }
 
 /* aboutUs */
@@ -1068,3 +1084,8 @@ button.accordion-btn {
 	}
 }
 
+@media (max-width: 1800px) {
+	.main-title{
+		left: 0;
+	}
+}
