@@ -422,7 +422,7 @@ ul li:hover ul.dropdown{
 	cursor: pointer;
 	position: fixed;
 	bottom: 17px; 
-	right: 84px;
+	right: 6%;
 	border-radius: 64px;
 	background: var(--primary_lib, #0C416B);
 	box-shadow: 3px 3px 30px 0px rgba(41, 65, 106, 0.15), -3px -3px 30px 0px rgba(50, 69, 108, 0.15);
@@ -1211,6 +1211,16 @@ button.accordion-btn {
 	}
 }
 
+@media (max-width: 1400px) {
+	.slide{
+		height: auto;
+		justify-content: start;
+	}
+	 .main-title{
+		font-size: 55px;
+	 }
+}
+
 
 
 @media (max-width: 1299px) {
@@ -1234,6 +1244,7 @@ button.accordion-btn {
 	}
 	.main-content{
 		justify-content: flex-start;
+		flex-wrap: wrap;
 	}
 	.main-img img {
     display: none;
@@ -1267,6 +1278,30 @@ button.accordion-btn {
 }
 
 @media (max-width: 800px) {
+	.main-profile{
+		flex-wrap: wrap;
+		gap: 20px;
+		justify-content: flex-start;
+	}
+	.main__container{
+		justify-content: start;
+	}
+	.slide{
+		height: auto;
+	}
+
+	.slider-controls{
+		bottom: 10%;
+	}
+
+	.about-text{
+		width: 350px;
+	}
+	.main-title{
+		align-self: start;
+		max-width: 350px;
+		font-size: 25px
+	}
 	.aboutUs-left-text{
 		width: auto;
 	}
