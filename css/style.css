@@ -215,6 +215,8 @@ header{
 	height: 665px;
 	position: relative;
 	justify-content: flex-end;
+	flex-direction: column;
+	gap: 20px;
 
 }
 
@@ -504,7 +506,7 @@ header{
 }
 .news-cards {
 	gap: 64px;
-	display: flex;
+	display: flex !important;
 	justify-content: space-between;
 	align-items: center;
 }
@@ -669,6 +671,11 @@ background: rgb(76, 122, 117);
 	transform: scale(0.9);
 	.news-card{
 		max-width: 100%;
+	}
+
+	img{
+		/* width: inherit;
+		 height: inherit; */
 	}
 	
 }
@@ -1158,7 +1165,7 @@ button.accordion-btn {
 	}
 
 	.main-title{
-		left: 8%;
+		position: static;
 	}
 	.main-img img{
 		width: 80%;
