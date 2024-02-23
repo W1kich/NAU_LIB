@@ -1211,16 +1211,37 @@ button.accordion-btn {
 	}
 }
 
-@media (max-width: 1800px) {
-	
-}
+
 
 @media (max-width: 1299px) {
+	.footer-main{
+		flex-wrap: wrap;
+	}
+
+	.partners-imgs{
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+	}
+	.faq-top{
+		display: inline;
+		gap: 20px;
+	}
+	.aboutUs-stats{
+		flex-wrap: wrap;
+		gap: 20px;
+	}
 	.main-content{
 		justify-content: flex-start;
 	}
 	.main-img img {
     display: none;
+}
+
+.services-cards-row{
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 	.aboutUs__container{
@@ -1241,14 +1262,26 @@ button.accordion-btn {
 			font-size: 24px;
 		}
 		}
-	.services-cards-row{
-		flex-wrap: wrap;
-		justify-content: center;
+	
+}
+}
+
+@media (max-width: 800px) {
+	.aboutUs-left-text{
+		width: auto;
 	}
 
-	.faq-top{
-		flex-wrap: wrap;
-		gap: 20px;
+	.ranking-text{
+		width: auto;
+	}
+
+	button.accordion-btn{
+		width: auto;
 	}
 }
+
+@media (max-width: 600px) {
+	.faq-ask{
+		font-size: 40px;
+	}
 }
