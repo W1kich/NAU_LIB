@@ -8,7 +8,9 @@ body{
 	padding: 64px 80px;
 	max-width: 1760px;
 }
-
+*{
+	font-family: Nunito;
+}
 .title-text{
 	color: var(--Neutrual, #131010);
 	font-family: Nunito;
@@ -137,6 +139,37 @@ header{
 }
 .contactme-content {
 	text-align: center;
+}
+
+ul li{
+	position: relative;
+}
+
+
+ul li ul.dropdown li{
+	display: block;
+}
+
+ul li ul.dropdown {
+	width: 100%;
+	background: #0a4c81;
+	border-radius: 11px;
+	position: absolute;
+	z-index: 12;
+	display: none;
+}
+
+ul li a:hover{
+	color: #769ED7;
+}
+
+ul li:hover ul.dropdown{
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	li{
+		padding: 10px;
+	}
 }
 
 @media(max-width:1399px){
@@ -1166,6 +1199,7 @@ button.accordion-btn {
 
 	.main-title{
 		position: static;
+		width: auto;
 	}
 	.main-img img{
 		width: 80%;
@@ -1182,13 +1216,39 @@ button.accordion-btn {
 }
 
 @media (max-width: 1299px) {
- .services-cards-row{
-	flex-wrap: wrap;
-	justify-content: center;
- }
+	.main-content{
+		justify-content: flex-start;
+	}
+	.main-img img {
+    display: none;
+}
 
- .faq-top{
-	flex-wrap: wrap;
-	gap: 20px;
- }
+	.aboutUs__container{
+		flex-direction: column;
+		.aboutUs-right img {
+			width: 80%;
+			height: 70%;
+	}
+
+	.aboutUs-right-exp {
+    bottom: 0;
+    /* width: 10%;
+    height: 10%; */
+		.aboutUs-right-exp-top {
+			font-size: 24px;
+		}
+		.aboutUs-right-exp-bottom {
+			font-size: 24px;
+		}
+		}
+	.services-cards-row{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.faq-top{
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+}
 }
