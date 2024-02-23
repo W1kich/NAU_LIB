@@ -1,6 +1,22 @@
+// nav
+
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+})
+
+document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", () => {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+}))
+
+
 
 $(document).ready(function(){
-  $('.news-cards').slick({
+	$('.news-cards').slick({
 		centerMode: true,
 		centerPadding: '60px',
 		slidesToShow: 3,
@@ -77,30 +93,39 @@ sliderDoth.forEach((doth, index) =>{
 const accordionButtons = document.querySelectorAll(".accordion-btn");
 
 accordionButtons.forEach((accordion) => {
-  const image = accordion.querySelector(".rotate-on-click");
-  let currentAngle = 0; // Track the current rotation angle
+	const image = accordion.querySelector(".rotate-on-click");
+	let currentAngle = 0; // Track the current rotation angle
 
-  accordion.addEventListener("click", () => {
-    const isExpanded = accordion.classList.contains("is-open");
+	accordion.addEventListener("click", () => {
+		const isExpanded = accordion.classList.contains("is-open");
 
-    // Rotate the image by 90 degrees only if the panel is expanding
-    if (!isExpanded) {
-      currentAngle += 180;
-      image.style.transform = `rotate(${currentAngle}deg)`;
-    } else {
-      // Reset rotation back to 0 when collapsing
-      currentAngle = 0;
-      image.style.transform = `rotate(${currentAngle}deg)`;
-    }
+		// Rotate the image by 90 degrees only if the panel is expanding
+		if (!isExpanded) {
+			currentAngle += 180;
+			image.style.transform = `rotate(${currentAngle}deg)`;
+		} else {
+			// Reset rotation back to 0 when collapsing
+			currentAngle = 0;
+			image.style.transform = `rotate(${currentAngle}deg)`;
+		}
 
-    accordion.classList.toggle("is-open");
+		accordion.classList.toggle("is-open");
 
-    let content = accordion.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
+		let content = accordion.nextElementSibling;
+		if (content.style.maxHeight) {
+			content.style.maxHeight = null;
+		} else {
+			content.style.maxHeight = content.scrollHeight + "px";
+		}
+	});
 });
 
+// to top 
+const scrollToTopButton = document.querySelector('.services-arrow');
+
+scrollToTopButton.addEventListener('click', () => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+});
