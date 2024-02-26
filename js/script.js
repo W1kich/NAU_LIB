@@ -64,14 +64,16 @@ function showSlide() {
 	sliderWidth = document.querySelector('.main-slider').offsetWidth;
 	sliderLine.style.width = sliderWidth*sliderItem.length + 'px';
 	sliderItem.forEach(item => item.style.width = sliderWidth + 'px');
-	console.log(sliderWidth)
 
 	rollSlide()
 	thisSlide(sliderCount);
 }
 
-showSlide();
-
+try {
+	showSlide();	
+} catch (err) {
+  console.error(err.message);
+}
 function rollSlide(){
 	sliderLine.style.transform = `translateX(${-sliderCount*sliderWidth}px)`
 }
