@@ -16,36 +16,65 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 
 
 $(document).ready(function(){
-	$('.news-cards').slick({
-		centerMode: true,
-		centerPadding: '60px',
-		slidesToShow: 3,
-		slidesToScroll: 1,
-		centerMode: true,
-		variableWidth: true,
-		responsive: [
-			{
-				breakpoint: 768,
-				settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 3
-				}
-			},
-			{
-				breakpoint: 480,
-				settings: {
-					arrows: false,
-					centerMode: true,
-					centerPadding: '40px',
-					slidesToShow: 1
-				}
-			}
-		],
-	prevArrow: '<div class="news-arows news-control-arows-right"><img src="img/icons/arow.svg" alt=""></div>',
-	nextArrow: '<div class="news-arows news-control-arows-left"><img src="img/icons/arow.svg" alt=""></div>'
+	// Функція, яка додає кнопки перегортування відповідно до брейкпоінта
+	function addOrRemoveArrows() {
+    if ($(window).width() < 800) {
+        // Видаляємо старі кнопки, якщо вони є
+				$('.news-arows').remove();
+        $('.news-controls').remove();
 
+        // Додаємо нові кнопки
+        $('.news-cards').parent().append('<div class="news-controls"></div>');
+        $('.news-controls').append('<div class="news-arows news-control-arows-right"><img src="img/icons/arow.svg" alt=""></div>');
+        $('.news-controls').append('<div class="news-arows news-control-arows-left"><img src="img/icons/arow.svg" alt=""></div>');
+    } else {
+        // Видаляємо старі кнопки, якщо вони є
+        $('.news-arows').remove();
+
+        // Додаємо нові кнопки
+        $('.slick-list').before('<div class="news-arows news-control-arows-right"><img src="img/icons/arow.svg" alt=""></div>');
+        $('.slick-list').after('<div class="news-arows news-control-arows-left"><img src="img/icons/arow.svg" alt=""></div>');
+    }
+}
+
+
+	// Ініціалізація Slick slider
+	$('.news-cards').slick({
+			centerMode: true,
+			centerPadding: '60px',
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			centerMode: true,
+			variableWidth: true,
+			responsive: [
+					{
+							breakpoint: 800,
+							settings: {
+									centerMode: true,
+									centerPadding: '40px',
+									slidesToShow: 1, 
+							}
+					}
+			],
+			prevArrow: false,
+			nextArrow: false
+	});
+
+	// Додавання кнопок перегортування при завантаженні сторінки
+	addOrRemoveArrows();
+
+	// Обробка зміни розміру вікна браузера
+	$(window).resize(function(){
+			addOrRemoveArrows();
+	});
+
+	// Обробники подій для ваших кнопок перегортування
+	$(document).on('click', '.news-control-arows-right', function(){
+			$('.news-cards').slick('slickNext');
+	});
+
+	$(document).on('click', '.news-control-arows-left', function(){
+			$('.news-cards').slick('slickPrev');
 	});
 });
 
@@ -53,7 +82,9 @@ $(document).ready(function(){
 
 const sliderItem = document.querySelectorAll('.slide'),
 			sliderLine = document.querySelector('.slider-line'),
-			sliderDoth = document.querySelectorAll('.slider-control');
+			sliderDoth = document.querySelectorAll('.slider-control'),
+			sliderBtnPrev = document.querySelector('.left-arow-control'),
+			sliderBtnPNext = document.querySelector('.right-arow-control');
 
 let sliderCount = 0,
 		sliderWidth;
@@ -90,6 +121,25 @@ sliderDoth.forEach((doth, index) =>{
 		thisSlide(sliderCount);
 	})
 })
+
+function nextSlide() {
+	sliderCount++;
+	if(sliderCount >= sliderItem.length) sliderCount = 0;
+
+	rollSlide();
+	thisSlide(sliderCount);
+}
+
+function prevSlide() {
+	sliderCount--;
+	if(sliderCount < 0) sliderCount = sliderItem.length -1;
+
+	rollSlide();
+	thisSlide(sliderCount);
+}
+
+sliderBtnPNext.addEventListener('click', nextSlide);
+sliderBtnPrev.addEventListener('click', prevSlide);
 // accordion
 
 const accordionButtons = document.querySelectorAll(".accordion-btn");
