@@ -16,22 +16,16 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
 
 
 $(document).ready(function(){
-	// Функція, яка додає кнопки перегортування відповідно до брейкпоінта
 	function addOrRemoveArrows() {
     if ($(window).width() < 800) {
-        // Видаляємо старі кнопки, якщо вони є
 				$('.news-arows').remove();
         $('.news-controls').remove();
 
-        // Додаємо нові кнопки
         $('.news-cards').parent().append('<div class="news-controls"></div>');
         $('.news-controls').append('<div class="news-arows news-control-arows-right"><img src="img/icons/arow.svg" alt=""></div>');
         $('.news-controls').append('<div class="news-arows news-control-arows-left"><img src="img/icons/arow.svg" alt=""></div>');
     } else {
-        // Видаляємо старі кнопки, якщо вони є
         $('.news-arows').remove();
-
-        // Додаємо нові кнопки
         $('.slick-list').before('<div class="news-arows news-control-arows-right"><img src="img/icons/arow.svg" alt=""></div>');
         $('.slick-list').after('<div class="news-arows news-control-arows-left"><img src="img/icons/arow.svg" alt=""></div>');
     }
@@ -60,15 +54,12 @@ $(document).ready(function(){
 			nextArrow: false
 	});
 
-	// Додавання кнопок перегортування при завантаженні сторінки
 	addOrRemoveArrows();
 
-	// Обробка зміни розміру вікна браузера
 	$(window).resize(function(){
 			addOrRemoveArrows();
 	});
 
-	// Обробники подій для ваших кнопок перегортування
 	$(document).on('click', '.news-control-arows-right', function(){
 			$('.news-cards').slick('slickNext');
 	});
@@ -146,17 +137,17 @@ const accordionButtons = document.querySelectorAll(".accordion-btn");
 
 accordionButtons.forEach((accordion) => {
 	const image = accordion.querySelector(".rotate-on-click");
-	let currentAngle = 0; // Track the current rotation angle
+	let currentAngle = 0; 
 
 	accordion.addEventListener("click", () => {
 		const isExpanded = accordion.classList.contains("is-open");
 
-		// Rotate the image by 90 degrees only if the panel is expanding
+		
 		if (!isExpanded) {
 			currentAngle += 180;
 			image.style.transform = `rotate(${currentAngle}deg)`;
 		} else {
-			// Reset rotation back to 0 when collapsing
+			
 			currentAngle = 0;
 			image.style.transform = `rotate(${currentAngle}deg)`;
 		}
