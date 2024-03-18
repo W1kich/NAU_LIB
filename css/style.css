@@ -1758,7 +1758,7 @@ body.home{
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	gap: 40px;
+	gap: 32px;
 	width: 739px;	
 	
 	h1{
