@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FileZilla3 version="3.66.4" platform="windows">
+	<Servers>
+		<Server>
+			<Host>hosting2.nau.edu.ua</Host>
+			<Port>21</Port>
+			<Protocol>0</Protocol>
+			<Type>0</Type>
+			<User>ioc_wp_1</User>
+			<Pass encoding="base64">TjlHd3RtQyE=</Pass>
+			<Logontype>1</Logontype>
+			<PasvMode>MODE_DEFAULT</PasvMode>
+			<EncodingType>Auto</EncodingType>
+			<BypassProxy>0</BypassProxy>
+			<Name>shablon.nau.edu.ua</Name>
+			<SyncBrowsing>0</SyncBrowsing>
+			<DirectoryComparison>0</DirectoryComparison>
+		</Server>
+	</Servers>
+</FileZilla3>
